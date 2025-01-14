@@ -5,9 +5,10 @@ const lotterySelect = document.getElementById('lottery-select');
 
 // Array de signos zodiacales
 const zodiacSigns = [
-  'Aries', 'Tauro', 'Géminis', 'Cáncer', 'Leo', 
-  'Virgo', 'Libra', 'Escorpio', 'Sagitario', 
-  'Capricornio', 'Acuario', 'Piscis'
+  'Acuario', 'Aries', 'Cáncer', 'Capricornio', 
+  'Escorpio', 'Géminis', 'Leo', 'Libra', 
+  'Piscis', 'Sagitario', 'Tauro', 'Virgo',
+  'Todos'
 ];
 
 // Función para cargar combinaciones guardadas
