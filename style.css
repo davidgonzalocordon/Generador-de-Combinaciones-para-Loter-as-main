@@ -1,19 +1,23 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #31c296;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+   
     margin: 0;
   }
   
   .container {
     background: white;
+    max-width: 600px;
+    width: 100%;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    
+    
   }
   
   h1 {
@@ -33,18 +37,126 @@ body {
     margin-bottom: 10px;
     width: 100px;
   }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+  /*box*/
+
+  .box {
+    position: relative;
+    left: 22%;
+    transform: translate(-50%, -1%); /* Bajará el elemento */
   }
   
-  button:hover {
-    background-color: #45a049;
+  .box {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    border-radius: 25px; /* redondear bordes */
+    width: 250px;
+    border: none;
+    font-size: 17px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+  }
+  
+  .box::before {
+    content: "\f13a";
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+  
+  .box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .box select option {
+    padding: 30px;
+  }
+
+  /*Botones*/
+  .ov-btn-slide-left {
+    background: #fff; /* color de fondo */
+    color: #4CAF50; /* color de fuente */
+    border: 2px solid #4CAF50; /* tamaño y color de borde */
+    padding: 10px 15px;
+    border-radius: 50px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .ov-btn-slide-left:hover {
+    color: #fff; /* color de fuente hover */
+  }
+  .ov-btn-slide-left::after {
+    content: "";
+    background: #4CAF50; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .ov-btn-slide-left:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
+  .ov-btn-slide-right {
+    background: #fff; /* color de fondo */
+    color: #4CAF50; /* color de fuente */
+    border: 2px solid #4CAF50; /* tamaño y color de borde */
+    padding: 10px 15px;
+    border-radius: 50px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .ov-btn-slide-right:hover {
+    color: #fff; /* color de fuente hover */
+  }
+  .ov-btn-slide-right::after {
+    content: "";
+    background: #4CAF50; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+  .ov-btn-slide-right:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
   }
   
   #result {
@@ -67,8 +179,34 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
-  button {
-    margin: 10px 5px;
-  }
-  
+
+  #lottery-results {
+    margin-top: 20px; /* Espacio superior */
+    padding: 15px; /* Espacio interno */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #f9f9f9; /* Color de fondo suave */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra ligera */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+#results-container {
+    display: flex; /* Usa flexbox para distribuir los resultados horizontalmente */
+    flex-wrap: wrap; /* Permite que los resultados se ajusten a varias líneas si es necesario */
+    gap: 10px; /* Espacio entre los resultados */
+    justify-content: center;
+}
+
+.result-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+    min-width: 100px;
+    text-align: center;
+}
+
+.result-item h3{
+    margin-top: 0;
+}
